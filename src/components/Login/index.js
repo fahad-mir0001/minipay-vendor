@@ -64,7 +64,7 @@ class Login extends Component {
       type,
     });
     this.props.onTabChange(type);
-  }
+  };
   handleSubmit = (e) => {
     e.preventDefault();
     const { active, type } = this.state;

@@ -31,33 +31,6 @@ const menuData = [{
     path: 'advanced-form',
   }],
 }, {
-  name: 'Table',
-  icon: 'table',
-  path: 'list',
-  children: [{
-    name: 'Table List',
-    path: 'table-list',
-  }, {
-    name: 'Basic List',
-    path: 'basic-list',
-  }, {
-    name: 'Card List',
-    path: 'card-list',
-  }, {
-    name: 'Search',
-    path: 'search',
-    children: [{
-      name: 'Articles',
-      path: 'articles',
-    }, {
-      name: 'Projects',
-      path: 'projects',
-    }, {
-      name: 'Applications',
-      path: 'applications',
-    }],
-  }],
-}, {
   name: 'Profile',
   icon: 'profile',
   path: 'profile',
@@ -69,56 +42,83 @@ const menuData = [{
     path: 'advanced',
     authority: 'admin',
   }],
-}, {
-  name: 'Check Circle',
-  icon: 'check-circle-o',
-  path: 'result',
-  children: [{
-    name: 'Success',
-    path: 'success',
-  }, {
-    name: 'Fail',
-    path: 'fail',
-  }],
-}, {
-  name: 'Warning',
-  icon: 'warning',
-  path: 'exception',
-  children: [{
-    name: '403',
-    path: '403',
-  }, {
-    name: '404',
-    path: '404',
-  }, {
-    name: '500',
-    path: '500',
-  }, {
-    name: 'Trigger',
-    path: 'trigger',
-    hideInMenu: true,
-  }],
-}, {
-  name: 'User',
-  icon: 'user',
-  path: 'user',
-  authority: 'guest',
-  children: [{
-    name: 'Login',
-    path: 'login',
-  }, {
-    name: 'Register',
-    path: 'register',
-  }, {
-    name: 'Register Result',
-    path: 'register-result',
-  }],
-}, {
-  name: 'Book',
-  icon: 'book',
-  path: 'http://pro.ant.design/docs/getting-started',
-  target: '_blank',
 }];
+
+// , {
+//   name: 'Table',
+//   icon: 'table',
+//   path: 'list',
+//   children: [{
+//     name: 'Table List',
+//     path: 'table-list',
+//   }, {
+//     name: 'Basic List',
+//     path: 'basic-list',
+//   }, {
+//     name: 'Card List',
+//     path: 'card-list',
+//   }, {
+//     name: 'Search',
+//     path: 'search',
+//     children: [{
+//       name: 'Articles',
+//       path: 'articles',
+//     }, {
+//       name: 'Projects',
+//       path: 'projects',
+//     }, {
+//       name: 'Applications',
+//       path: 'applications',
+//     }],
+//   }],
+// },
+// , {
+//   name: 'Check Circle',
+//   icon: 'check-circle-o',
+//   path: 'result',
+//   children: [{
+//     name: 'Success',
+//     path: 'success',
+//   }, {
+//     name: 'Fail',
+//     path: 'fail',
+//   }],
+// }
+// , {
+//   name: 'Warning',
+//   icon: 'warning',
+//   path: 'exception',
+//   children: [{
+//     name: '403',
+//     path: '403',
+//   }, {
+//     name: '404',
+//     path: '404',
+//   }, {
+//     name: '500',
+//     path: '500',
+//   }, {
+//     name: 'Trigger',
+//     path: 'trigger',
+//     hideInMenu: true,
+//   }],
+// }
+//   ,{
+//   name: 'User',
+//   icon: 'user',
+//   path: 'user',
+//   authority: 'guest',
+//   children: [{
+//     name: 'Login',
+//     path: 'login',
+//   }, {
+//     name: 'Register',
+//     path: 'register',
+//   }, {
+//     name: 'Register Result',
+//     path: 'register-result',
+//   }],
+// }];
 
 function formatter(data, parentPath = '', parentAuthority) {
   return data.map((item) => {

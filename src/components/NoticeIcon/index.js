@@ -14,8 +14,8 @@ export default class NoticeIcon extends PureComponent {
     onClear: () => {},
     loading: false,
     locale: {
-      emptyText: '暂无数据',
-      clear: '清空',
+      emptyText: 'No Data',
+      clear: 'Clear',
     },
     emptyImage: 'https://gw.alipayobjects.com/zos/rmsportal/wAhyIChODzsoKIOBHcBk.svg',
   };

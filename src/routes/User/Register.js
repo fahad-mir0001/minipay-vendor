@@ -9,9 +9,9 @@ const { Option } = Select;
 const InputGroup = Input.Group;
 
 const passwordStatusMap = {
-  ok: <div className={styles.success}>强度：强</div>,
-  pass: <div className={styles.warning}>强度：中</div>,
-  poor: <div className={styles.error}>强度：太短</div>,
+  ok: <div className={styles.success}>Strength: Strong</div>,
+  pass: <div className={styles.warning}>Strength: Medium</div>,
+  poor: <div className={styles.error}>Strength: Low</div>,
 };
 
 const passwordProgressMap = {
@@ -91,7 +91,7 @@ export default class Register extends Component {
   checkConfirm = (rule, value, callback) => {
     const { form } = this.props;
     if (value && value !== form.getFieldValue('password')) {
-      callback('两次输入的密码不匹配!');
+      callback('Confirm Password does not match!');
     } else {
       callback();
     }
@@ -100,7 +100,7 @@ export default class Register extends Component {
   checkPassword = (rule, value, callback) => {
     if (!value) {
       this.setState({
-        help: '请输入密码！',
+        help: 'Please enter the Password！',
         visible: !!value,
       });
       callback('error');
@@ -154,21 +154,21 @@ export default class Register extends Component {
     const { count, prefix } = this.state;
     return (
       <div className={styles.main}>
-        <h3>注册</h3>
+        <h3>Registered</h3>
         <Form onSubmit={this.handleSubmit}>
           <FormItem>
             {getFieldDecorator('mail', {
               rules: [
                 {
                   required: true,
-                  message: '请输入邮箱地址！',
+                  message: 'Please input Email Address！',
                 },
                 {
                   type: 'email',
-                  message: '邮箱地址格式错误！',
+                  message: 'Email Address Format Error！',
                 },
               ],
-            })(<Input size="large" placeholder="邮箱" />)}
+            })(<Input size="large" placeholder="mailbox" />)}
           </FormItem>
           <FormItem help={this.state.help}>
             <Popover
@@ -177,7 +177,7 @@ export default class Register extends Component {
                   {passwordStatusMap[this.getPasswordStatus()]}
                   {this.renderPasswordProgress()}
                   <div style={{ marginTop: 10 }}>
-                    请至少输入 6 个字符。请不要使用容易被猜到的密码。
+                    Please enter at least 6 characters.<br/>Please do not use easily guessed passwords.
                   </div>
                 </div>
               }
@@ -195,7 +195,7 @@ export default class Register extends Component {
                 <Input
                   size="large"
                   type="password"
-                  placeholder="至少6位密码，区分大小写"
+                  placeholder="At least 6 characters (case sensitive)"
                 />
               )}
             </Popover>
@@ -205,13 +205,13 @@ export default class Register extends Component {
               rules: [
                 {
                   required: true,
-                  message: '请确认密码！',
+                  message: 'Please Confirm your Password！',
                 },
                 {
                   validator: this.checkConfirm,
                 },
               ],
-            })(<Input size="large" type="password" placeholder="确认密码" />)}
+            })(<Input size="large" type="password" placeholder="Confirm Password" />)}
           </FormItem>
           <FormItem>
             <InputGroup compact>
@@ -228,18 +228,18 @@ export default class Register extends Component {
                 rules: [
                   {
                     required: true,
-                    message: '请输入手机号！',
+                    message: 'Please enter Phone Number！',
                   },
                   {
                     pattern: /^1\d{10}$/,
-                    message: '手机号格式错误！',
+                    message: 'Incorrect Phone Number！',
                   },
                 ],
               })(
                 <Input
                   size="large"
                   style={{ width: '80%' }}
-                  placeholder="11位手机号"
+                  placeholder="Password must have atleast 11 digits"
                 />
               )}
             </InputGroup>
@@ -251,10 +251,10 @@ export default class Register extends Component {
                   rules: [
                     {
                       required: true,
-                      message: '请输入验证码！',
+                      message: 'Please Enter Verification code！',
                     },
                   ],
-                })(<Input size="large" placeholder="验证码" />)}
+                })(<Input size="large" placeholder="Verification code" />)}
               </Col>
               <Col span={8}>
                 <Button
@@ -263,7 +263,7 @@ export default class Register extends Component {
                   className={styles.getCaptcha}
                   onClick={this.onGetCaptcha}
                 >
-                  {count ? `${count} s` : '获取验证码'}
+                  {count ? `${count} s` : 'Get Code'}
                 </Button>
               </Col>
             </Row>
@@ -276,10 +276,10 @@ export default class Register extends Component {
               type="primary"
               htmlType="submit"
             >
-              注册
+              Register
             </Button>
             <Link className={styles.login} to="/user/login">
-              使用已有账户登录
+              LogNumber of search usersin using existing account
             </Link>
           </FormItem>
         </Form>

@@ -7,9 +7,9 @@ export default {
 
   state: {
     step: {
-      payAccount: 'ant-design@alipay.com',
+      payAccount: 'support@minipay.com',
       receiverAccount: 'test@example.com',
-      receiverName: 'Alex',
+      receiverName: 'John',
       amount: '500',
     },
   },
@@ -17,7 +17,7 @@ export default {
   effects: {
     *submitRegularForm({ payload }, { call }) {
       yield call(fakeSubmitForm, payload);
-      message.success('提交成功');
+      message.success('Successfully submitted!');
     },
     *submitStepForm({ payload }, { call, put }) {
       yield call(fakeSubmitForm, payload);
@@ -29,7 +29,7 @@ export default {
     },
     *submitAdvancedForm({ payload }, { call }) {
       yield call(fakeSubmitForm, payload);
-      message.success('提交成功');
+      message.success('Successfully submitted!');
     },
   },
 

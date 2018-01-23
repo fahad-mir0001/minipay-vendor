@@ -68,7 +68,7 @@ class BasicLayout extends React.PureComponent {
   static childContextTypes = {
     location: PropTypes.object,
     breadcrumbNameMap: PropTypes.object,
-  }
+  };
   state = {
     isMobile,
   };
@@ -92,9 +92,9 @@ class BasicLayout extends React.PureComponent {
   getPageTitle() {
     const { routerData, location } = this.props;
     const { pathname } = location;
-    let title = 'Ant Design Pro';
+    let title = 'Minipay Merchant';
     if (routerData[pathname] && routerData[pathname].name) {
-      title = `${routerData[pathname].name} - Ant Design Pro`;
+      title = `${routerData[pathname].name} - Minipay Merchant`;
     }
     return title;
   }
@@ -112,14 +112,14 @@ class BasicLayout extends React.PureComponent {
       type: 'global/changeLayoutCollapsed',
       payload: collapsed,
     });
-  }
+  };
   handleNoticeClear = (type) => {
     message.success(`Success${type}`);
     this.props.dispatch({
       type: 'global/clearNotices',
       payload: type,
     });
-  }
+  };
   handleMenuClick = ({ key }) => {
     if (key === 'triggerError') {
       this.props.dispatch(routerRedux.push('/exception/trigger'));
@@ -130,14 +130,14 @@ class BasicLayout extends React.PureComponent {
         type: 'login/logout',
       });
     }
-  }
+  };
   handleNoticeVisibleChange = (visible) => {
     if (visible) {
       this.props.dispatch({
         type: 'global/fetchNotices',
       });
     }
-  }
+  };
   render() {
     const {
       currentUser, collapsed, fetchingNotices, notices, routerData, match, location,
